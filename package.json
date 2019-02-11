@@ -8,7 +8,12 @@
   },
   "dependencies": {
     "react": "16.6.3",
-    "react-native": "0.58.3"
+    "react-native": "0.58.3",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-elements": "^1.0.0",
+    "react-native-router-flux": "^4.0.6",
+    "react-native-vector-icons": "^6.2.0",
+    "redux-form": "^8.1.0"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
