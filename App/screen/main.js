@@ -12,6 +12,7 @@ import {
     DatePickerIOS,
     Keyboard, 
 } from 'react-native';
+import { Field, reduxForm } from 'redux-form'
 import { ButtonGroup, Divider,Tooltip } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
@@ -20,7 +21,15 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { Actions } from 'react-native-router-flux';
 import {styles} from '../Styles/styles';
-export default class Main extends Component {
+
+ContactForm = reduxForm({
+    // a unique name for the form
+    form: 'login'
+  })(Component)
+  
+export default ContactForm;
+
+export class Main extends Component {
     constructor() {
         super();
         this.state = {
@@ -97,7 +106,9 @@ export default class Main extends Component {
                             <ScrollView style={{ flex: 1 }}>
                                 <View style={{ flex: 1, flexDirection: 'row', margin: 24 }}>
                                     <Icon name="user" size={32} color='black'></Icon>
-                                    <TextInput
+                                    <Field
+                                        name={firstname}
+                                        component={TextInput}
                                         value={this.state.userFname}
                                         style={styles.input}
                                         placeholder="First Name"
